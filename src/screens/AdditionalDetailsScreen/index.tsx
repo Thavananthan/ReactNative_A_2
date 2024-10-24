@@ -12,6 +12,8 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../navigation/AppStack';
 import { useDispatch } from 'react-redux';
 import { setFormData } from '../../redux/slices/formSlice';
+import Header from '../../components/Header';
+import PrimaryButton from '../../components/PrimaryButton';
 
 
 
@@ -77,10 +79,7 @@ const AdditionalDetailsScreen: React.FC<AdditionalDetailsScreenProps> = ({ route
   return (
     <View style={styles.container}>
       {/* Header */}
-      <View style={styles.header}>
-        <Icon name="arrow-back" size={24} onPress={() => navigation.goBack()} />
-        <Text style={styles.headerText}>Additional details</Text>
-      </View>
+      <Header title="Additional Details" onPress={() => navigation.goBack()} />
 
       <ScrollView>
         {/* Benefits Section */}
@@ -152,9 +151,8 @@ const AdditionalDetailsScreen: React.FC<AdditionalDetailsScreenProps> = ({ route
         </View>
 
         {/* Next Button */}
-        <TouchableOpacity style={styles.nextButton} onPress={() => submitData()}>
-          <Text style={styles.nextButtonText}>Next</Text>
-        </TouchableOpacity>
+          {/* Next Button */}
+     <PrimaryButton title="Next" onPress={() => submitData()} />
       </ScrollView>
     </View>
   );
